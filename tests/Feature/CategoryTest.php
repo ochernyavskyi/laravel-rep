@@ -18,7 +18,7 @@ class CategoryTest extends TestCase
             'description'=>'any description'
         ];
 
-        $this->post('/categories, $category');
+        $this->post('/categories', $category);
 
         $this ->assertDatabaseHas('categories', $category);
 

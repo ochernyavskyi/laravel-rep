@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/categories', function () {
     $categories = \App\Models\Category::all();
-    return view('./categories/index', compact('categories'));
+    return view('/categories.index', compact('categories'));
     });
 
 Route::post('/categories', function () {
