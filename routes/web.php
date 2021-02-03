@@ -17,12 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/categories', function () {
-    $categories = \App\Models\Category::all();
-    return view('/categories.index', compact('categories'));
-    });
+Route::get('/categories', ['App\Http\Controllers\CategoryController', 'index'])->name('categories');
 
-Route::post('/categories', function () {
-    $data = request(['title', 'description']);
-    \App\Models\Category::create($data);
-});
+Route::get('/categories/create',['App\Http\Controllers\CategoryController', 'create']);
+
+Route::post('/categories/',['App\Http\Controllers\CategoryController', 'store'])->name('category_store');
+
+Route::get('/categories/{category}',['App\Http\Controllers\CategoryController', 'show']);
+
+Route::post('/categories/',['App\Http\Controllers\CategoryController', 'update'])->name ('category_update');
+
+Route::get('/categories/delete/{category}',['App\Http\Controllers\CategoryController', 'delete']);
+
