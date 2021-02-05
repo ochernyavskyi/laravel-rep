@@ -35,18 +35,10 @@ class CategoryTest extends TestCase
     }
 
     public function testDeleteCategory(){
-        $category = Category::factory()->raw();
-        $this->post('/categories', $category);
-        $this->get('/categories/delete/' . $category['id']);
-        $this->assertDatabaseMissing($category['id']);
+        $category = Category::factory()->create();
+        $this->get('/categories/delete/' . $category->id);
+        $this->get('/categories')->assertDontSee($category['id']);
     }
-
-    public function testUpdateCategory(){
-        $category = Category::factory()->raw();
-        $this->post('/categories', $category);
-        $this->get('/categories/' . $category['id']);
-    }
-
 
     public function testCategory()
     {
