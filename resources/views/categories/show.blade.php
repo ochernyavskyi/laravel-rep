@@ -8,13 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-<form method="post" action="{{ route ('category_update') }}">
+<h2>Category update</h2>
+<form method="post" action="/categories/{category}">
     @csrf
-    <input type="text" name = "title" value="{{ $category -> title}}" placeholder="Enter the title">
+    <input type="text" name="title" value="{{ $category -> title}}" placeholder="Enter the title">
     @error('title')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
-    <input type="text" name = "description" value="{{ $category -> description }}" placeholder="Enter the description">
+    <input type="text" name="description" value="{{ $category -> description }}" placeholder="Enter the description">
     @error('description')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror

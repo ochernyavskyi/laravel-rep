@@ -8,6 +8,7 @@
     <title>All categories</title>
 </head>
 <body>
+<h2>Categories</h2>
 <ul>
     @forelse($categories as $item)
         <li>{{ $item->title }}</li>
