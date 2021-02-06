@@ -25,7 +25,7 @@ Route::post('/categories/',['App\Http\Controllers\CategoryController', 'store'])
 
 Route::get('/categories/{category}',['App\Http\Controllers\CategoryController', 'show']);
 
-Route::post('/categories/',['App\Http\Controllers\CategoryController', 'update'])->name ('category_update');
+Route::post('/categories/{category}',['App\Http\Controllers\CategoryController', 'update'])->name ('category_update');
 
 Route::get('/categories/delete/{category}',['App\Http\Controllers\CategoryController', 'delete']);
 

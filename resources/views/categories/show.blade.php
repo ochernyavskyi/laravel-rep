@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form method="post" action="{{ route ('category_update') }}">
+<form method="post" action="/categories/{category}">
     @csrf
     <input type="text" name = "title" value="{{ $category -> title}}" placeholder="Enter the title">
     @error('title')
