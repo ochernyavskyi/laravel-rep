@@ -40,6 +40,12 @@ class CategoryTest extends TestCase
         $this->get('/categories')->assertDontSee($category['id']);
     }
 
+    public function testUpdateCategory(){
+        $category = Category::factory()->create();
+        $category = Category::find();
+
+    }
+
     public function testCategory()
     {
         $this->withExceptionHandling();
