@@ -10,7 +10,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with(['category:id,title'])->get();
+//        dd (Product::with(['category:id,title', 'comment:id,messa ge']));
+        $products = Product::with(['category:id,title', 'comment:id,message'])->get();
+
         return view('products.index', compact('products'));
     }
 
