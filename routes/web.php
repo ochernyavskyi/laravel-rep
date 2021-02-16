@@ -18,14 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/categories', ['App\Http\Controllers\CategoryController', 'index'])->name('categories')->middleware(['auth']);
-Route::get('/categories/create',['App\Http\Controllers\CategoryController', 'create'])->middleware(['auth']);
+Route::get('/categories/create',['App\Http\Controllers\CategoryController', 'create'])->name('category_create')->middleware(['auth']);
 Route::post('/categories/',['App\Http\Controllers\CategoryController', 'store'])->name('category_store')->middleware(['auth']);
 Route::get('/categories/{category}',['App\Http\Controllers\CategoryController', 'show'])->middleware(['auth']);
-Route::post('/categories/{category}',['App\Http\Controllers\CategoryController', 'update'])->name ('category_update')->middleware(['auth']);
+Route::post('/categories/{category}',['App\Http\Controllers\CategoryController', 'update'])->middleware(['auth']);
 Route::get('/categories/delete/{category}',['App\Http\Controllers\CategoryController', 'delete'])->middleware(['auth']);
 
 Route::get('/products', ['App\Http\Controllers\ProductController', 'index'])->name('products')->middleware(['auth']);
-Route::get('/products/create',['App\Http\Controllers\ProductController', 'create'])->middleware(['auth']);
+Route::get('/products/create',['App\Http\Controllers\ProductController', 'create'])->name ('product_create')->middleware(['auth']);
 Route::post('/products/',['App\Http\Controllers\ProductController', 'store'])->name('product_store')->middleware(['auth']);
 Route::get('/products/{product}',['App\Http\Controllers\ProductController', 'show'])->middleware(['auth']);
 Route::post('/products/{product}',['App\Http\Controllers\ProductController', 'update'])->name ('product_update')->middleware(['auth']);

@@ -27,23 +27,23 @@
                 <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/products" id="navbarDropdown" role="button"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Products
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/products/">List</a>
-                    <a class="dropdown-item" href="/products/create">Create</a>
+                    <a class="dropdown-item" href="{{route('products')}}">List</a>
+                    <a class="dropdown-item" href="{{route('product_create')}}">Create</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/categories" id="navbarDropdown" role="button"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/categories/">List</a>
-                    <a class="dropdown-item" href="/categories/create">Create</a>
+                    <a class="dropdown-item" href="{{route('categories')}}">List</a>
+                    <a class="dropdown-item" href="{{route('category_create')}}">Create</a>
                 </div>
             </li>
         </ul>

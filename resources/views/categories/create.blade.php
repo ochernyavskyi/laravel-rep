@@ -2,7 +2,7 @@
 
 @section('title', 'Category create')
 @section('content')
-<h2>Category update</h2>
+<h2>Category create</h2>
 <form method="post" action="{{ route ('category_store') }}">
     @csrf
     <input type="text" name = "title" value="{{ old('title') }}" placeholder="Enter the title">
